@@ -1,0 +1,322 @@
+
+.post-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 20px;
+    background:
+        radial-gradient(circle at top left, rgba(220, 20, 60, 0.12), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(120, 0, 0, 0.15), transparent 35%),
+        #080808;
+    color: #fff;
+}
+
+
+/* =========================
+   POST CARD
+========================= */
+
+.post-card {
+    width: 100%;
+    max-width: 650px;
+    padding: 32px;
+    border-radius: 24px;
+
+    background: rgba(25, 25, 25, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+    backdrop-filter: blur(20px);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.post-header > i {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    font-size: 25px;
+
+    color: #fff;
+
+    background: linear-gradient(
+        135deg,
+        #e50914,
+        #8b0000
+    );
+
+    box-shadow:
+        0 8px 25px rgba(229, 9, 20, 0.25);
+}
+
+.post-header h2 {
+    margin: 0;
+
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.post-header p {
+    margin: 5px 0 0;
+
+    color: #888;
+    font-size: 14px;
+}
+
+
+/* =========================
+   IMAGE UPLOAD
+========================= */
+
+.image-upload {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.image-upload label {
+    min-height: 180px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 30px;
+
+    border: 1.5px dashed rgba(255, 255, 255, 0.18);
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.image-upload label:hover {
+    border-color: #e50914;
+
+    background: rgba(229, 9, 20, 0.05);
+
+    transform: translateY(-2px);
+}
+
+.image-upload label i {
+    font-size: 42px;
+    color: #e50914;
+}
+
+.image-upload label span {
+    color: #aaa;
+    font-size: 14px;
+    text-align: center;
+}
+
+.image-upload input {
+    display: none;
+}
+
+
+/* =========================
+   CAPTION
+========================= */
+
+.caption-box {
+    margin-bottom: 20px;
+}
+
+.caption-box textarea {
+    width: 100%;
+    min-height: 130px;
+
+    padding: 18px;
+
+    resize: vertical;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    color: #fff;
+
+    font-size: 15px;
+    line-height: 1.6;
+
+    transition: 0.3s ease;
+
+    box-sizing: border-box;
+}
+
+.caption-box textarea::placeholder {
+    color: #666;
+}
+
+.caption-box textarea:focus {
+    border-color: rgba(229, 9, 20, 0.7);
+
+    background: rgba(255, 255, 255, 0.05);
+
+    box-shadow:
+        0 0 0 3px rgba(229, 9, 20, 0.08);
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.post-message {
+    margin: 10px 0 18px;
+
+    color: #ff5c67;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   POST BUTTON
+========================= */
+
+.post-card button {
+    width: 100%;
+
+    padding: 14px 20px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: linear-gradient(
+        135deg,
+        #e50914,
+        #a00000
+    );
+
+    color: #fff;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 10px 25px rgba(229, 9, 20, 0.2);
+}
+
+.post-card button i {
+    margin-right: 8px;
+}
+
+.post-card button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 15px 35px rgba(229, 9, 20, 0.3);
+}
+
+.post-card button:active {
+    transform: translateY(0);
+}
+
+.post-card button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .post-page {
+        padding: 30px 15px 100px;
+        align-items: flex-start;
+    }
+
+    .post-card {
+        padding: 24px 18px;
+        border-radius: 20px;
+    }
+
+    .post-header h2 {
+        font-size: 21px;
+    }
+
+    .post-header p {
+        font-size: 13px;
+    }
+
+    .post-header > i {
+        width: 46px;
+        height: 46px;
+        font-size: 21px;
+    }
+
+    .image-upload label {
+        min-height: 150px;
+    }
+
+    .image-upload label i {
+        font-size: 35px;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+    .post-page {
+        padding: 20px 10px 100px;
+    }
+
+    .post-card {
+        padding: 20px 14px;
+    }
+
+    .post-header {
+        gap: 12px;
+    }
+
+    .post-header h2 {
+        font-size: 19px;
+    }
+
+    .post-header p {
+        font-size: 12px;
+    }
+}
+

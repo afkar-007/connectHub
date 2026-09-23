@@ -1,0 +1,40 @@
+.inputfield{
+    padding: 2rem;
+    width: 20rem;
+    display: flex;
+    height: 70rem;
+    background-color: aquamarine;
+    color: white;
+
+}
+
+.image-upload input {
+    display: none;
+   
+}
+
+.image-upload label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: #000000;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.image-upload label:hover {
+    background: #222;
+    transform: translateY(-2px);
+}
+
+.image-upload i {
+    font-size: 18px;
+}
+
+.tender input{
+    display: none;
+}

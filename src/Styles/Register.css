@@ -1,0 +1,435 @@
+/* =================================
+   RESET
+================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* =================================
+   PAGE
+================================= */
+
+.register-page {
+  width: 100%;
+  min-height: 100dvh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px 20px;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(255, 255, 255, 0.07),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 100% 100%,
+      rgba(255, 255, 255, 0.035),
+      transparent 30%
+    ),
+    #050505;
+
+  font-family: "Poppins", sans-serif;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+
+/* =================================
+   BACKGROUND GLOW
+================================= */
+
+.register-page::before {
+  content: "";
+
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  top: -200px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  background: rgba(255, 255, 255, 0.05);
+
+  filter: blur(100px);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+/* =================================
+   REGISTER CARD
+================================= */
+
+.register-card {
+  width: 100%;
+  max-width: 450px;
+
+  padding: 42px 40px;
+
+  background: rgba(17, 17, 17, 0.92);
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  position: relative;
+  z-index: 2;
+
+  animation: registerAppear 0.6s ease;
+}
+
+
+/* =================================
+   TOP LINE
+================================= */
+
+.register-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 110px;
+  height: 3px;
+
+  background: #ffffff;
+
+  border-radius: 0 0 10px 10px;
+}
+
+
+/* =================================
+   HEADER
+================================= */
+
+.register-header {
+  text-align: center;
+
+  margin-bottom: 32px;
+}
+
+.register-header h1 {
+  color: #ffffff;
+
+  font-size: 30px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
+
+  margin-bottom: 8px;
+}
+
+.register-header p {
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+/* =================================
+   FORM
+================================= */
+
+.register-form {
+  width: 100%;
+}
+
+
+/* =================================
+   INPUT GROUP
+================================= */
+
+.input-group {
+  width: 100%;
+
+  margin-bottom: 18px;
+  
+}
+
+.input-group label {
+  display: block;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  margin-bottom: 8px;
+
+  letter-spacing: 0.3px;
+}
+
+
+/* =================================
+   INPUT
+================================= */
+
+.input-group input {
+  width: 100%;
+
+  height: 54px;
+
+  padding: 0 16px;
+
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.045);
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 13px;
+
+  outline: none;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  transition:
+    border 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* Placeholder */
+
+.input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.28);
+}
+
+
+/* Focus */
+
+.input-group input:focus {
+  background: rgba(255, 255, 255, 0.07);
+
+  border-color: rgba(255, 255, 255, 0.4);
+
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, 0.04);
+}
+
+
+/* =================================
+   ERROR
+================================= */
+
+.register-error {
+  color: #ff5c5c;
+
+  font-size: 12px;
+
+  margin: 5px 0 15px;
+
+  text-align: left;
+}
+
+
+/* =================================
+   REGISTER BUTTON
+================================= */
+
+.register-button {
+  width: 100%;
+
+  height: 56px;
+
+  margin-top: 8px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  color: #050505;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.3px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* Hover */
+
+.register-button:hover {
+  background: #eeeeee;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 14px 30px rgba(255, 255, 255, 0.12);
+}
+
+
+/* Click */
+
+.register-button:active {
+  transform: translateY(0);
+}
+
+.passEye{
+  padding: 0.3rem;
+  background-color: azure;
+  border-radius:100% ;
+  border: none;
+  background-color: red;
+  color: white;
+}
+
+/* =================================
+   LOGIN TEXT
+================================= */
+
+.login-text {
+  margin-top: 25px;
+
+  text-align: center;
+
+  color: rgba(255, 255, 255, 0.4);
+
+  font-size: 12px;
+}
+
+.login-text span {
+  color: #ffffff;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: opacity 0.2s ease;
+}
+
+.login-text span:hover {
+  opacity: 0.65;
+}
+
+
+/* =================================
+   ANIMATION
+================================= */
+
+@keyframes registerAppear {
+
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+  .register-page {
+    padding: 18px;
+  }
+
+  .register-card {
+    padding: 35px 25px;
+
+    border-radius: 24px;
+  }
+
+  .register-header h1 {
+    font-size: 26px;
+  }
+
+  .input-group input {
+    height: 52px;
+  }
+
+  .register-button {
+    height: 54px;
+  }
+}
+
+
+/* =================================
+   SMALL MOBILE
+================================= */
+
+@media (max-width: 380px) {
+
+  .register-page {
+    padding: 12px;
+  }
+
+  .register-card {
+    padding: 30px 20px;
+  }
+
+  .register-header {
+    margin-bottom: 25px;
+  }
+
+  .register-header h1 {
+    font-size: 24px;
+  }
+
+  .input-group {
+    margin-bottom: 14px;
+  }
+
+}

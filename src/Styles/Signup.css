@@ -1,0 +1,457 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+ overflow-x: hidden;
+ 
+}
+
+.welcome-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+
+  background:
+    radial-gradient(circle at 50% 15%, rgba(255, 255, 255, 0.08), transparent 30%),
+    radial-gradient(circle at 15% 85%, rgba(120, 120, 120, 0.08), transparent 30%),
+    #050505;
+
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+
+/* ================================
+   BACKGROUND GLOW
+================================ */
+
+.welcome-page::before {
+  content: "";
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  top: -220px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  background: rgba(255, 255, 255, 0.07);
+
+  filter: blur(100px);
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.welcome-page::after {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  bottom: -150px;
+  right: -100px;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  filter: blur(90px);
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+/* ================================
+   MAIN CARD
+================================ */
+
+.welcome-card {
+  width: 100%;
+  max-width: 460px;
+
+  min-height: 650px;
+
+  padding: 55px 45px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: rgba(18, 18, 18, 0.82);
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 32px;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.65),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  position: relative;
+  z-index: 2;
+
+  animation: cardAppear 0.7s ease;
+}
+
+
+/* ================================
+   CARD TOP LINE
+================================ */
+
+.welcome-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 100px;
+  height: 3px;
+
+  background: #ffffff;
+
+  border-radius: 0 0 10px 10px;
+
+  opacity: 0.8;
+}
+
+
+/* ================================
+   LOGO
+================================ */
+
+.brand-logo {
+  width: 100px;
+  height: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 22px;
+
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  overflow: hidden;
+
+  animation: logoFloat 3s ease-in-out infinite;
+}
+
+.brand-logo img {
+  width: 70px;
+  height: 70px;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+
+/* ================================
+   BRAND NAME
+================================ */
+
+.brand-name {
+  color: #ffffff;
+
+  font-size: 24px;
+  font-weight: 700;
+
+  letter-spacing: 6px;
+
+  margin-bottom: 42px;
+
+  text-shadow:
+    0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+
+/* ================================
+   WELCOME TITLE
+================================ */
+
+.welcome-title {
+  color: #ffffff;
+
+  font-size: clamp(38px, 7vw, 56px);
+
+  line-height: 1.08;
+
+  font-weight: 700;
+
+  letter-spacing: -2px;
+
+  margin-bottom: 20px;
+}
+
+
+/* ================================
+   SUBTITLE
+================================ */
+
+.welcome-subtitle {
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  font-weight: 400;
+
+  margin-bottom: 42px;
+}
+
+
+/* ================================
+   LOGIN BUTTON
+================================ */
+
+.login-button {
+  width: 100%;
+  max-width: 300px;
+
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+
+  color: #050505;
+
+  background: #ffffff;
+
+  border-radius: 16px;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+
+/* Button shine */
+
+.login-button::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 70%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.6s ease;
+}
+
+
+/* Button hover */
+
+.login-button:hover {
+  transform: translateY(-4px);
+
+  background: #f1f1f1;
+
+  box-shadow:
+    0 15px 35px rgba(255, 255, 255, 0.12);
+}
+
+.login-button:hover::before {
+  left: 130%;
+}
+
+
+/* Button click */
+
+.login-button:active {
+  transform: translateY(-1px);
+}
+
+
+/* ================================
+   ANIMATIONS
+================================ */
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes logoFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 600px) {
+
+  .welcome-page {
+    padding: 20px;
+  }
+
+  .welcome-card {
+    min-height: 620px;
+
+    padding: 45px 28px;
+
+    border-radius: 28px;
+  }
+
+  .brand-logo {
+    width: 88px;
+    height: 88px;
+
+    border-radius: 24px;
+  }
+
+  .brand-logo img {
+    width: 62px;
+    height: 62px;
+  }
+
+  .brand-name {
+    font-size: 20px;
+    letter-spacing: 5px;
+
+    margin-bottom: 36px;
+  }
+
+  .welcome-title {
+    font-size: 42px;
+  }
+
+  .welcome-subtitle {
+    font-size: 14px;
+
+    margin-bottom: 36px;
+  }
+
+  .login-button {
+    max-width: 100%;
+  }
+}
+
+
+/* ================================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 380px) {
+
+  .welcome-page {
+    padding: 14px;
+  }
+
+  .welcome-card {
+    min-height: 590px;
+
+    padding: 35px 22px;
+
+    border-radius: 24px;
+  }
+
+  .brand-logo {
+    width: 78px;
+    height: 78px;
+  }
+
+  .brand-logo img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .brand-name {
+    font-size: 18px;
+    letter-spacing: 4px;
+
+    margin-bottom: 30px;
+  }
+
+  .welcome-title {
+    font-size: 36px;
+  }
+
+  .welcome-subtitle {
+    font-size: 13px;
+
+    margin-bottom: 32px;
+  }
+
+  .login-button {
+    height: 54px;
+  }
+}
+
