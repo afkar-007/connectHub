@@ -14,7 +14,7 @@ function Home() {
 
     async function PostFetch() {
      
-        const Response = await fetch("http://localhost:3000/post/fetchpost")
+        const Response = await fetch("https://connecthub-backend-2.onrender.com/post/fetchpost")
         const data = await Response.json()
         setPost(data.posts)
         

@@ -79,7 +79,7 @@ function Register() {
     password:confirmPass
   }
 
-  const response = await fetch("http://localhost:3000/users/Register",{
+  const response = await fetch("https://connecthub-backend-2.onrender.com/users/Register",{
     method:"POST",
     headers:{'Content-Type': 'application/json'},
     body:JSON.stringify(newUser)

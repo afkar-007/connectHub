@@ -33,7 +33,7 @@ function Post() {
             formData.append("postId", userId);
 
             const response = await fetch(
-                "http://localhost:3000/post/post",
+                "https://connecthub-backend-2.onrender.com/post/post",
                 {
                     method: "POST",
                     

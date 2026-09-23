@@ -27,7 +27,7 @@ PostFetch()
 
         const id=localStorage.getItem("userId")
      
-        const Response = await fetch(`http://localhost:3000/post/ownPost/${id}`)
+        const Response = await fetch(`https://connecthub-backend-2.onrender.com/post/ownPost/${id}`)
         const data = await Response.json()
         setPost(data.ownPosts)
        
@@ -55,7 +55,7 @@ PostFetch()
 
 async function deletePosts(id) {
 
-  const response = await fetch(`http://localhost:3000/post/delete/${id}`,{
+  const response = await fetch(`https://connecthub-backend-2.onrender.com/post/delete/${id}`,{
     method:"DELETE",
       headers: {
     'Content-Type': 'application/json'}
@@ -90,7 +90,7 @@ async function deletePosts(id) {
 
  async function Profile() {
 
-  const Response = await fetch(`http://localhost:3000/users/profile/${id}`)
+  const Response = await fetch(`https://connecthub-backend-2.onrender.com/users/profile/${id}`)
   const data = await Response.json()
   
   setProfileData(data.profile)
