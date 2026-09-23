@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../Styles/Post.css";
 import {useNavigate} from "react-router-dom"
 import Sidenav from "../Components/Sidenav";
+import { useEffect } from "react";
 
 function Post() {
     const navigate = useNavigate()
@@ -10,7 +11,19 @@ function Post() {
     const [caption, setCaption] = useState("");
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState("");
-    const userId= localStorage.getItem("userId")
+  
+
+    useEffect(()=>{
+        
+      const checkGateWay=localStorage.getItem("isLoggedIn")
+    if(checkGateWay !=="true"){
+      navigate('/')}
+      
+    
+        
+
+    },[])
+
     
     
 

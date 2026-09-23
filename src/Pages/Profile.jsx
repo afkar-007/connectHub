@@ -6,13 +6,20 @@ import { useParams } from "react-router-dom";
 
 import '../Styles/Profile.css'
 import Sidenav from "../Components/Sidenav";
+import { useNavigate } from "react-router-dom";
 
 
 function Profile() {
+  const Navigate =useNavigate()
 
 
 
   useEffect(()=>{
+    const checkGateWay=localStorage.getItem("isLoggedIn")
+    if(checkGateWay !=="true"){
+      Navigate('/')
+      
+    }
 
 Profile()
 PostFetch()

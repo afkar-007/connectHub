@@ -1,8 +1,20 @@
 import React from "react"
 import Sidenav from "../Components/Sidenav"
 import "../Styles/About.css"
+import { useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 
 function About() {
+    const Navigate =useNavigate()
+
+useEffect(()=>{
+ const checkGateWay=localStorage.getItem("isLoggedIn")
+    if(checkGateWay !=="true"){
+      Navigate('/')
+      
+    }
+},[])
+    
     return (
         <div className="connecthub-layout">
 

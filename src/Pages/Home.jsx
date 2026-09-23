@@ -2,12 +2,21 @@ import React, { useEffect } from "react";
 import "../Styles/Home.css";
 import Sidenav from "../Components/Sidenav";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 function Home() {
+    const Navigate =useNavigate()
 
     const [post,setPost]=useState([])
     const [like,setLike]=useState(false)
+    
     useEffect(()=>{
+      const checkGateWay=localStorage.getItem("isLoggedIn")
+    if(checkGateWay !=="true"){
+      Navigate('/')}
+      
+    
         PostFetch()
 
     },[])
