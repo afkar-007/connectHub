@@ -13,16 +13,6 @@ function Post() {
     const [message, setMessage] = useState("");
   
 
-    useEffect(()=>{
-        
-      const checkGateWay=localStorage.getItem("isLoggedIn")
-    if(checkGateWay !=="true"){
-      navigate('/')}
-      
-    
-        
-
-    },[])
 
     
     
@@ -38,6 +28,7 @@ function Post() {
         try {
             setLoading(true);
             setMessage("");
+            const userId=localStorage.getItem("userId")
 
             const formData = new FormData();
 
