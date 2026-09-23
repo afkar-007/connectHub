@@ -10,6 +10,7 @@ import Profile from './Pages/Profile'
 import Post from './Pages/Post'
 import About from './Pages/About'
 // =========import pages====================
+import ScrollToTop from './Pages/ScrollToTop'
 
 import { Route,Routes } from 'react-router-dom'
 
@@ -26,6 +27,7 @@ function App() {
 
   return (
     <>
+    <ScrollToTop/>
 
   
 

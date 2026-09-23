@@ -63,6 +63,17 @@
     margin-bottom: 7px;
 }
 
+.loadingdiv{
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+}
+.loadingPara{
+    color: white;
+   padding-top: 20rem;
+   padding-left: 11rem;
+}
+
 
 .connecthub-home .connect-header h1 {
     margin: 0;

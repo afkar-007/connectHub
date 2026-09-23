@@ -99,7 +99,7 @@ function Home() {
                             <div className="post-image">
 
                                 <img
-                                    src={`http://localhost:3000/uploads/${sends.image}`}
+                                    src={sends.image}
                                     alt="Post"
                                     onDoubleClick={()=>setLike(true)}
                                 />

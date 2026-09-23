@@ -97,11 +97,15 @@ async function deletePosts(id) {
   
  }
 
- 
-
  if(!profileData){
-  return(<p>loading</p> )
+  return(
+    <div className="loadingdiv">
+  <p className="loadingPara">loading</p>
+  </div>
+ )
  }
+
+ 
 
 
 
@@ -208,7 +212,7 @@ async function deletePosts(id) {
                                     {post.image && (
 
                                         <img
-                                            src={`http://localhost:3000/uploads/${post.image}`}
+                                            src={post.image}
                                             alt="Post"
                                             className="profPost"
                                         />
