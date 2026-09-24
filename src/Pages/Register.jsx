@@ -245,6 +245,7 @@ finally{
           <button
             className="register-button"
             onClick={(e)=>register(e)}
+            disabled={loading}
           >
             {loading? "Registering..." :"Create Account"}
           </button>
