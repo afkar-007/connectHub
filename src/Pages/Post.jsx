@@ -11,6 +11,7 @@ function Post() {
     const [caption, setCaption] = useState("");
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState("");
+    
   
 
 
@@ -74,6 +75,9 @@ function Post() {
 
         }
     };
+
+
+
 
     return (
         <>

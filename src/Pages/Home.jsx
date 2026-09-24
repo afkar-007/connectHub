@@ -3,6 +3,7 @@ import "../Styles/Home.css";
 import Sidenav from "../Components/Sidenav";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import loadingGif from '../images/loading.gif'
 
 
 
@@ -11,6 +12,7 @@ function Home() {
 
     const [post,setPost]=useState([])
     const [like,setLike]=useState(false)
+    const [loading,setLoading]=useState(false)
     
     useEffect(()=>{
       const checkGateWay=localStorage.getItem("isLoggedIn")
@@ -23,16 +25,26 @@ function Home() {
     },[])
 
     async function PostFetch() {
+        try{
+            setLoading(true)
      
         const Response = await fetch("https://connecthub-backend-2.onrender.com/post/fetchpost")
         const data = await Response.json()
         setPost(data.posts)
-        
+        }
+        catch(err){
+            console.log(err);
+            
+        }
+        finally{
+            setLoading(false)
+        }
+
     
     }
 
     if(!post){
-        return (<p>fetching posts</p>)
+        return (<p className="postsLoading">posts Loading</p>)
     }
 
 
@@ -69,7 +81,12 @@ function Home() {
                     </header>
 
 
-                    {/* ================= POST SECTION ================= */}
+{loading ? (
+    <div className="post-loading">
+        <img src={loadingGif} alt="Loading..." />
+        <p>Loading posts...</p>
+    </div>
+) :(   
                     <section className="posts-section">
 
 
@@ -162,7 +179,7 @@ function Home() {
                         </article>)}
 
                     </section>
-
+)}
                 </main>
 
             </div>
