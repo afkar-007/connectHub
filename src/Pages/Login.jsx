@@ -8,6 +8,7 @@ function Login() {
     const [showPassword, setShowPassword] = useState(false)
     const [error,setError]=useState("")
     const emailPattern = /^[^\s@]+@gmail\.com$/
+    const [loading,setLoading]=useState(false)
 
     const navigate = useNavigate()
 
@@ -28,6 +29,8 @@ function Login() {
         
     
         e.preventDefault()
+        try{
+            setLoading(true)
 
            if(email.trim()===""){
     return setError("E-mail cannot be empty")
@@ -100,16 +103,18 @@ function Login() {
    
   }
 
+        }catch(err){
+            console.log(err);
+            
+        }
+
+finally{
+    setLoading(false)
+}
+
+ }
 
 
-
-
-
-
-        
-
-       
-    }
 
     return (
         <div className="login-page">
@@ -236,8 +241,9 @@ function Login() {
                         <button
                             type="submit"
                             className="login-button"
+                            disabled={loading}
                         >
-                            <span>LOGIN</span>
+                            {loading? "LOGINING..." :"LOGIN"}
                             <i className="bi bi-arrow-right"></i>
                         </button>
 

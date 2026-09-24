@@ -11,6 +11,7 @@ function Register() {
   const [confirmPass,setConfirmPassword]=useState("")
   const [error,setError]=useState("")
   const emailPattern = /^[^\s@]+@gmail\.com$/
+   const [loading,setLoading]=useState(false)
 
     const [showPassword, setShowPassword] = useState(false)
     const [showConfirmPassword, setShowConfirmPassword] = useState(false)
@@ -18,8 +19,11 @@ function Register() {
 
 
  async function register(e) {
-  e.preventDefault()
 
+  e.preventDefault()
+  try{
+
+    setLoading(true)
 
   if(name.trim()===""){
     return setError("User name cannot be empty")
@@ -105,6 +109,13 @@ function Register() {
 
 
   setError("")
+}catch(err){
+  console.log(err);
+  
+}
+finally{
+  setLoading(false)
+}
 
 
 
@@ -235,7 +246,7 @@ function Register() {
             className="register-button"
             onClick={(e)=>register(e)}
           >
-            Create Account
+            {loading? "Registering..." :"Create Account"}
           </button>
 
         </div>
